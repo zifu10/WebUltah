@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19th December - Page 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background">
+    <audio id="backgroundAudio" autoplay loop>
+        <source src="memories.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="memories.mp3">di sini</a>.
+    </audio>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>December 19th - 1976</h1>
+        <p>Tau ga ma, tanggal ini merupakan tanggal dimana lahirnya seorang ibu terbaik di dunia</p>
+        
+        <div class="gallery">
+            <img src="Young_Mom2.jpg" alt="The Greatest Mom Ever" class="image"> 
+            <img src="Young_Mom.jpg" alt="The Greatest Mom Ever" class="image"> 
+            <img src="Young_Mom3.jpg" alt="The Greatest Mom Ever" class="image"> 
+        </div>
+
+        <p>Yahhh memang subjektif sih, tapi pasti kalau semua orang kenal mama pasti mereka akan setuju bahwa mama merupakan kandidat terkuat menjadi ibu terbaik di dunia :)</p>
+
+
+        <!-- Tombol untuk melanjutkan ke halaman kuis -->
+        <a href="OurFamily.html" class="btn-lanjut" id="nextPageBtn">Yuk Kita Lanjut</a>
+    </div>
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2; // Volume 50%
+
+         // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        const container = document.querySelector(".container");
+
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("slide-out");
+
+            // Tunggu animasi selesai, lalu navigasikan ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href;
+            }, 1500); // Sesuai durasi animasi
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 Year? - Page 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background">
+    <audio autoplay loop>
+        <source src="fun.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="fun.mp3">di sini</a>.
+    </audio>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Mama Sekarang berumur 48 Tahun?!!</h1>
+        <p>Kalau dipikir-pikir 48 Tahun itu udah lama banget ya ma, udah hampir setengah abad😅</p>
+        <p>Tapi tau ga ma, walaupun umur mama yang segitu, tetapi mama selalu keliatan awet muda tauuu....</p>
+        <p>Kalau ga percaya coba liat foto-foto ini</p>
+        <div class="gallery">
+            <img src="Images/2.jpg" alt="Mom & Dad" class="image">
+            <img src="Images/1.jpg" alt="Mom & Dad" class="image">
+            <img src="Images/3.jpg" alt="Mom & Dad" class="image">
+        </div>
+        <div class="gallery">
+            <img src="Images/4.jpg" alt="Mom & Dad" class="image">
+            <img src="Images/5.jpg" alt="Mom & Dad" class="image">
+            <img src="Images/6.jpg" alt="Mom & Dad" class="image">
+        </div>
+        <p>Noh kan Mama cantik banget, awet muda parah😍😍😍</p>
+        <p>Kayaknya kalau mama bikin konten cara buat awet muda mama, auto viral tuh</p>
+
+        <a href="Videos1.html" class="btn-lanjut" id="nextPageBtn">Kita Lanjut Lagi!!!</a>
+    </div>
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2; // Volume 50%
+
+        // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        const container = document.querySelector(".container");
+
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("slide-out");
+
+            // Tunggu animasi selesai, lalu navigasikan ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href;
+            }, 1500); // Sesuai durasi animasi
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* Gaya Umum */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Merriweather', serif;
+    color: #f1f1f1;
+    overflow-y: auto; /* Memungkinkan scrolling */
+    justify-content: center;  /* Pusatkan secara horizontal */
+    align-items: center;      /* Pusatkan secara vertikal */
+    text-align: center;       /* Agar teks juga berada di tengah */
+}
+
+/* Latar Belakang */
+.background {
+    background: url('Background_Mama.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+/* Overlay untuk efek transparansi */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Gelap transparan */
+    z-index: 1; /* Pastikan overlay di atas background */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Gaya Umum untuk Kontainer */
+.container {
+    position: relative;
+    z-index: 2; /* Pastikan kontainer di atas overlay */
+    background: rgb(243, 243, 243, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto; /* Memastikan kontainer berada di tengah */
+    text-align: center; /* Rata tengah isi kontainer */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1.5s ease forwards;
+}
+
+.container.slide-out {
+    animation: slideOut 1.5s ease forwards;
+}
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gaya Judul */
+h1 {
+    color: #000000;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.704);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Warna background heading */
+    padding: 10px 20px; /* Padding untuk ruang di dalam background */
+    border-radius: 15px; /* Membuat ujung background bulat */
+    display: inline-block; /* Supaya background hanya melingkupi teks */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek */
+}
+
+h2 {
+    color: #000000;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.704);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Warna background heading */
+    padding: 10px 20px; /* Padding untuk ruang di dalam background */
+    border-radius: 15px; /* Membuat ujung background bulat */
+    display: inline-block; /* Supaya background hanya melingkupi teks */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek */
+}
+
+/* Gaya Paragraf */
+p {
+    color: #000000;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex; /* Mengatur tata letak baris horizontal */
+    flex-wrap: wrap;
+    justify-content: center; /* Meratakan isi ke tengah */
+    align-items: center;
+    gap: 20px; /* Memberikan jarak antar gambar */
+    margin-top: 20px; /* Tambahkan margin untuk jarak di atas */
+}
+
+/* Gaya Gambar */
+.image {
+    display: flex;
+    flex-direction: column; /* Mengatur arah vertikal untuk semua elemen dalam kontainer */
+    align-items: center; /* Pusatkan konten secara horizontal */
+    justify-content: center; /* Pusatkan konten secara vertikal (opsional untuk halaman penuh) */
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar kontainer */
+    max-height: 300px; /* Atur tinggi maksimum */
+    width: auto; /* Sesuaikan lebar secara proporsional */
+    height: auto; /* Sesuaikan tinggi secara proporsional */
+    display: block; /* Hindari adanya jarak default */
+    margin: 0 auto; /* Pusatkan gambar */
+    border-radius: 15px; /* Tambahkan ujung bulat jika diperlukan */
+    border: 4px solid #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 1s ease-in-out; /* Menambahkan animasi zoom */
+    margin: 20px 0; /* Menambahkan margin atas dan bawah untuk memberi ruang */
+    object-fit: cover; /* Gambar akan mengisi kontainer tanpa merusak rasio */
+}
+
+.children-image {
+    display: flex;
+    flex-direction: column; /* Mengatur arah vertikal untuk semua elemen dalam kontainer */
+    align-items: center; /* Pusatkan konten secara horizontal */
+    justify-content: center; /* Pusatkan konten secara vertikal (opsional untuk halaman penuh) */
+    max-width: 100%; /* Memastikan gambar tidak melebihi lebar kontainer */
+    max-height: 200px; /* Atur tinggi maksimum */
+    width: auto; /* Sesuaikan lebar secara proporsional */
+    height: auto; /* Sesuaikan tinggi secara proporsional */
+    display: block; /* Hindari adanya jarak default */
+    margin: 0 auto; /* Pusatkan gambar */
+    border-radius: 15px; /* Tambahkan ujung bulat jika diperlukan */
+    border: 4px solid #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 1s ease-in-out; /* Menambahkan animasi zoom */
+    margin: 20px 0; /* Menambahkan margin atas dan bawah untuk memberi ruang */
+    object-fit: cover; /* Gambar akan mengisi kontainer tanpa merusak rasio */
+}
+
+.gratitude-container {
+    max-width: 800px; /* Lebar maksimum kontainer */
+    margin: 80px auto; /* Memastikan kontainer berada di tengah secara horizontal */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Latar belakang transparan */
+    border-radius: 10px; /* Membuat ujung kontainer melengkung */
+    text-align: center; /* Teks rata tengah */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk estetika */
+    animation: fadeIn 1.5s ease-in-out; /* Animasi masuk */
+}
+
+.gratitude-container p,
+.gratitude-container ul {
+    max-width: 700px; /* Membatasi lebar teks */
+    margin: 0 auto; /* Pusatkan teks */
+    line-height: 1.6; /* Jarak antar baris lebih nyaman dibaca */
+    color: #000000; /* Warna teks hitam */
+    text-align: justify; /* Rata kanan dan kiri untuk teks panjang */
+}
+
+.gratitude-list li {
+    color: #000; /* Mengatur warna teks menjadi hitam */
+    font-size: 1.1em;
+    text-align: left;
+
+}
+
+.gratitude-container p:last-of-type {
+    margin-bottom: 40px; /* Memberikan jarak ekstra di bawah paragraf terakhir */
+}
+
+/* Tombol */
+.btn-lanjut {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: #fbfbfb;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-lanjut:hover {
+    background-color: #959595;
+    transform: scale(1.05);
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Atur lebar sesuai keinginan */
+    max-width: 800px; /* Maksimal lebar untuk rasio 16:9 */
+    max-height: 300px;
+    height: 0;
+    padding-bottom: 56.25%; /* Rasio 16:9 (9/16 = 0.5625) */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px; /* Opsional: Tambahkan sudut melengkung */
+    background: #000; /* Warna latar belakang saat tidak ada video */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;  /* Mengurangi padding pada layar kecil */
+    }
+
+    .image, .children-image {
+        max-width: 80%; /* Mengurangi ukuran gambar pada layar kecil */
+    }
+}
+

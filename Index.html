@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday - to The Greatest Mom Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('Background_Mama.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #212124, #616376, #acaceb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            animation: fadeIn 1.5s ease-in-out, bounce 2s infinite ease-in-out; /* Gabungkan animasi */
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #000000;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .hint {
+            color: #383a3a;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .btn-lanjut {
+            display: inline-block;
+            background-color: #fff;
+            color: #333;
+            padding: 8px 18px; /* Smaller padding for a smaller button */
+            font-size: 1.2rem; /* Adjusted font size */
+            margin-top: 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+            font-family: 'Roboto', sans-serif; /* Use the new font */
+        }
+
+        .btn-lanjut:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05); /* Slightly larger hover effect */
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .confetti div {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            animation: confettiFall 3s infinite linear;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-10px) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+         /* Tambahkan efek zoom-in */
+        .zoom-in {
+            animation: zoomInEffect 1.5s ease-out;
+        }
+
+        @keyframes zoomInEffect {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="zoom-in">
+    <div class="portal"></div>
+    <div class="confetti" id="confetti"></div>
+    <audio autoplay loop>
+        <source src="Birthday.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="Birthday.mp3">di sini</a>.
+    </audio>
+    <div>
+        <h1 id="birthdayMessage">Happy Birthday Mama, <br> The Greatest Mom Ever!</h1>
+        <p>Di hari spesial Mama ini, Kami ingin memberikan sesuatu yang berkesan untuk Mama</p>
+        <div class="hint">(sebelumnya aa minta maaf ya kalau kurang bagus, masih belajar)</div>
+        <a href="19thDes.html" class="btn-lanjut">Mari Kita Lanjut</a>
+    </div>
+
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.3;
+
+        // Confetti animation with random colors and more particles
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            const numConfetti = 150;
+
+            for (let i = 0; i < numConfetti; i++) {
+                let confetti = document.createElement('div');
+                confetti.style.backgroundColor = getRandomColor();
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 2}s`;
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff6347', '#ff7f50', '#87ceeb', '#32cd32', '#ffb6c1', '#f0e68c'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        window.onload = () => {
+            createConfetti();
+        };
+
+        // Tangkap tombol lanjut
+        const btnLanjut = document.querySelector('.btn-lanjut');
+
+        // Tambahkan event listener
+        btnLanjut.addEventListener('click', function (e) {
+            e.preventDefault(); // Cegah transisi langsung
+            document.body.classList.remove('zoom-in'); // Hapus kelas zoom-in
+            document.body.style.animation = 'zoomOutEffect 1s ease-in-out'; // Tambahkan animasi keluar
+
+            // Tunggu animasi selesai, lalu pindah ke halaman baru
+            setTimeout(() => {
+                window.location.href = btnLanjut.getAttribute('href'); // Pindah ke halaman baru
+            }, 1000); // Durasi animasi zoom-out
+        });
+
+        // Animasi zoom-out
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes zoomOutEffect {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

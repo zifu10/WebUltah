@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mom - Page 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="background">
+    <audio autoplay loop>
+        <source src="TheLast.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="TheLast.mp3">di sini</a>.
+    </audio>
+    <div class="gratitude-container">
+        <h1 class="fade-in">Thank You Mama</h1>
+        <p class="fade-in-delay">We are very grateful because mama is our mother</p>
+
+        <ul class="gratitude-list slide-in-left">
+            <li>Thank you for always being there for us.</li>
+            <li>Thank you for your endless support and love.</li>
+            <li>Thank you for encouraging us even on the toughest days.</li>
+            <li>Thank you for a lot of things that we couldn't write it in here every single of it</li>
+            <li>and Thank you for being our mother.......</li>
+        </ul>
+        
+        <h2 class="fade-in">Happy Birthday to the most wonderful mom in the world!</h2>
+        <p class="fade-in-delay">
+            Mom, you are the light of our home and the heart of our family. Your love, kindness, and wisdom have shaped us into who we are today, and we are forever grateful for you.
+            On your special day, We wish you endless happiness, good health, and all the joy that your heart can hold. You deserve nothing but the best because you are truly one in a 
+            million!! nope wait, I think one in a billion? or maybe more than that. 
+        </p>
+        <p class="fade-in-delay">
+            Thank you for your unconditional love, for always believing in us, and for being our greatest inspiration. May this year bring you beautiful moments, cherished memories, 
+            and dreams come true. We love you more than words can ever express. 
+            <br>
+            Happy 48th Birthday, Mom! 🎉💖
+        </p>
+        <br>
+        <p class="fade-in-delay">
+            With all our love and warmest wishes,
+            <br>
+            Your children 🌸
+            </p>
+        <a href="Index.html" class="btn-lanjut" id="nextPageBtn">Back to The Start</a>
+    </div>
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2; // Volume 50%
+
+        // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevent the default behavior for now
+
+            // Apply the transition effect if you want
+            const container = document.querySelector(".gratitude-container"); // Targeting the right container
+
+            // You can add an animation class here if needed
+            container.classList.add("slide-out");
+
+            // Redirect after animation
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href; // Navigate to Index.html
+            }, 500); // Duration of the animation (1.5s)
+        });
+    </script>
+</body>
+</html>

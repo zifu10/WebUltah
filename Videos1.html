@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From The Kids - Page 5.1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background">
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Nah Ada Video Ucapan Nih....</h1>
+        <p>Dari si Sulung ama si Bungsu dulu ya</p>
+
+        <div class="gallery">
+            <div class="video-container">
+                <video controls autoplay>
+                    <source src="memory-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <p></p>
+        <a href="Videos2.html" class="btn-lanjut" id="nextPageBtn">Kita Lanjut!!</a>
+    </div>
+    <script>
+        // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        const container = document.querySelector(".container");
+
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("slide-out");
+
+            // Tunggu animasi selesai, lalu navigasikan ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href;
+            }, 1500); // Sesuai durasi animasi
+        });
+    </script>
+</body>
+</html>

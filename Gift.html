@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Special Gift - Page 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background">
+    <audio autoplay loop>
+        <source src="gift.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="gift.mp3">di sini</a>.
+    </audio>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Wow There is a Gift?!!</h1>
+        <p>Ada Hadiah nih buat Mama, sebuah Gift Card!!</p>
+        
+        <div class="gift-box">
+            <img src="gift.png" alt="Gift" style="width: 200px;">
+            <p>Click the box to open your gift!</p>
+        </div>
+
+        <a href="ForMom.html" class="btn-lanjut" id="nextPageBtn">Kalau udah buka kadonya, Kita Lanjut!!</a>
+    </div>
+
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2; // Volume 50%
+
+        // Add click event to gift box to show message
+        const giftBox = document.querySelector('.gift-box');
+        giftBox.onclick = function() {
+            alert('Congratulations! You have opened your gift! 🎁\n\nHappy Birthday ke -48 Mama tercinta, ini hadiah dari kami membuatkan mama website yang masih biasa aja sih sebenarnya, tetapi semoga mama suka dan selalu bahagia 😊');
+        };
+
+        // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        const container = document.querySelector(".container");
+
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("slide-out");
+
+            // Tunggu animasi selesai, lalu navigasikan ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href;
+            }, 1500); // Sesuai durasi animasi
+        });
+    </script>
+</body>
+</html>

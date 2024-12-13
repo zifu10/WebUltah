@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Family - Page 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background">
+    <audio autoplay loop>
+        <source src="family.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio player. Silakan unduh lagunya 
+        <a href="family.mp3">di sini</a>.
+    </audio>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>December 12th - 2001</h1>
+        <p>Ternyata seminggu sebelum Ulang Tahun Mama, Mama menikah dengan Papa kita, Umar Hadi</p>
+        <div class="gallery">
+            <img src="Parents.jpg" alt="Mom & Dad" class="image">
+        </div>
+        <p>Yah walaupun Mama pernah cerita habis nikah itu Papa lupa ama Ulang Tahun Mama karena sibuk kerja. Sampe Mama chat Papa saying "Happy Birthday To Me..."😅</p>
+        <p>but despite all of that he's trying to be the best husband he ever could!!!</p>
+
+        <p>Kemudian, Mama melahirkan empat anak yang ganteng-ganteng dan cantik ini deh</p>
+
+        <div class="gallery">
+            <img src="Mom_Abang.jpg" alt="Mom & Dad" class="children-image">
+            <img src="Mom_Ilman.jpg" alt="Mom & Dad" class="children-image">
+            <img src="Mom_Dyna.jpg" alt="Mom & Dad" class="children-image">
+            <img src="Mom_Athfan.jpg" alt="Mom & Dad" class="children-image">
+        </div>
+        <p>Muhammad Arsyady Umar (1)</p>
+        <p>Zaid Ilman Faqih Umar (2)</p>
+        <p>Dzamdyna Syauqueen Umar (3)</p>
+        <p>Radhya Athfan Umar (4)</p>
+
+        <p>Katanya sih anak kedua yang paling cakep diantara yang lain, heheheheh</p>
+        <p>(bercanda kok cakep semua, orang emaknya aja cakep banget)</p>
+
+        <a href="48Year.html" class="btn-lanjut" id="nextPageBtn">Yuk Kita Lanjut</a>
+    </div>
+    <script>
+        const audio = document.querySelector("audio");
+        audio.volume = 0.5; // Volume 50%
+
+        // Animasi transisi halaman
+        const nextPageBtn = document.getElementById("nextPageBtn");
+        const container = document.querySelector(".container");
+
+        nextPageBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("slide-out");
+
+            // Tunggu animasi selesai, lalu navigasikan ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = nextPageBtn.href;
+            }, 1500); // Sesuai durasi animasi
+        });
+    </script>
+</body>
+</html>

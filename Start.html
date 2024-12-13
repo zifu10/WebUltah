@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_start.css">
+    <title>Happy Birthday🎉</title>
+</head>
+<body>
+
+    <div class="box">
+
+        <span style="--i:1"><img src="boxImage/1.jpg"></span>
+        <span style="--i:2"><img src="boxImage/2.jpg"></span>
+        <span style="--i:3"><img src="boxImage/3.jpg"></span>
+        <span style="--i:4"><img src="boxImage/4.jpg"></span>
+        <span style="--i:5"><img src="boxImage/5.jpg"></span>
+        <span style="--i:6"><img src="boxImage/6.jpg"></span>
+        <span style="--i:7"><img src="boxImage/7.jpg"></span>
+        <span style="--i:8"><img src="boxImage/8.jpg"></span>
+        <span style="--i:9"><img src="boxImage/9.jpg"></span>
+        <span style="--i:10"><img src="boxImage/10.jpg"></span>
+
+
+    </div>
+
+    <!-- Tambahkan elemen <a> untuk membuat teks klikable -->
+    <div class="message" id="message">
+        <a href="Index.html">Happy Birthday 🎂🎊</a>
+    </div>
+
+    <div class="hint">
+        <p>(Click the text above to continue!)</p>
+    </div>
+
+    <script>
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                document.body.appendChild(confetti);
+        
+                // Posisi awal confetti
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * -200;
+        
+                // Warna acak
+                const colors = ['#e74c3c', '#f1c40f', '#3498db', '#1abc9c', '#9b59b6'];
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+                // Posisi acak
+                confetti.style.left = `${x}px`;
+                confetti.style.top = `${y}px`;
+        
+                // Kecepatan jatuh acak
+                const animationDuration = Math.random() * 3 + 3; // Antara 3s dan 6s
+                confetti.style.animationDuration = `${animationDuration}s`;
+        
+                // Ukuran acak
+                const size = Math.random() * 10 + 10; // Ukuran antara 10px dan 20px
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+            }
+        }
+
+        // Panggil fungsi confetti saat halaman dimuat
+        createConfetti();
+
+        // Tangkap elemen tulisan Happy Birthday
+        const message = document.getElementById("message");
+
+        // Tambahkan event listener untuk klik
+        message.addEventListener("click", function (event) {
+            event.preventDefault(); // Cegah default action pada link (redirect langsung)
+
+            // Tambahkan kelas zoom-out-effect pada elemen body
+            document.body.classList.add("zoom-out-effect");
+
+            // Tunggu hingga animasi selesai, lalu redirect ke halaman berikutnya
+            setTimeout(() => {
+                window.location.href = "Index.html"; // Ganti dengan URL halaman berikutnya
+            }, 1000); // Sesuaikan waktu dengan durasi animasi (1 detik)
+        });
+    </script>
+    
+</body>
+</html>

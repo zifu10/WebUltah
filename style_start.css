@@ -1,0 +1,172 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Agar kotak dan teks bertumpuk secara vertikal */
+    min-height: 100vh;
+    background: linear-gradient(to top, #3498db, #ffffff);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.box:hover{
+    animation-play-state: paused;
+    
+}
+.box {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: animate 30s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+}
+
+.box span::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message {
+    position: absolute;
+    top: 50%; /* Posisi vertikal tengah */
+    left: 50%; /* Posisi horizontal tengah */
+    transform: translate(-50%, -50%); /* Atur agar berada di tengah */
+    font-family: 'Courier New', monospace;
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #9ba6b1;
+    width: 0;
+    animation: typewriter 4s steps(22) 1s forwards, blink 0.5s step-end infinite;
+    z-index: 5;
+}
+
+.message a {
+    text-decoration: none; /* Hilangkan garis bawah pada teks */
+    color: #fbfbfb; /* Warna teks */
+    cursor: pointer;
+}
+
+.message a:hover {
+    color: #8d1711; /* Ubah warna teks saat hover */
+}
+
+.hint {
+    position: absolute;
+    top: calc(50% + 100px); /* Di bawah pesan "Happy Birthday" */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #fbfbfb;
+    padding: 10px 20px; /* Padding untuk ruang di dalam background */
+    border-radius: 15px;
+    opacity: 0; /* Awalnya tersembunyi */
+    animation: fadeIn 3s ease-in-out forwards 4s; /* Animasi muncul */
+    z-index: 20; /* Letakkan di atas semua elemen lainnya */
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 11.7em;
+    }
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #2c3e50;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #f1c40f;
+    opacity: 1;
+    animation: confettiFall 5s linear infinite;
+}
+
+/* Animasi confetti jatuh */
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-150px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px);
+        opacity: 0;
+    }
+}
+
+.zoom-out-effect {
+    animation: zoomOut 1s forwards ease-in-out; /* Efek zoom out selama 1 detik */
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1); /* Mulai dari ukuran normal */
+        opacity: 1; /* Tetap terlihat */
+    }
+    to {
+        transform: scale(1.5); /* Zoom menjadi 1.5x */
+        opacity: 0; /* Memudar ke transparan */
+    }
+}

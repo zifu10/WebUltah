@@ -175,6 +175,8 @@ p {
     line-height: 1.6; /* Jarak antar baris lebih nyaman dibaca */
     color: #000000; /* Warna teks hitam */
     text-align: justify; /* Rata kanan dan kiri untuk teks panjang */
+    text-indent: 30px; /* Atur jarak indentasi di sini */
+    margin-bottom: 1em;
 }
 
 .gratitude-list li {

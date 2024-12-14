@@ -98,9 +98,7 @@ body{
     transform: translateX(-50%);
     font-size: 1.2rem;
     color: #000000;
-    background-color: #fbfbfb;
-    padding: 10px 20px; /* Padding untuk ruang di dalam background */
-    border-radius: 15px;
+    font-weight: bold;
     opacity: 0; /* Awalnya tersembunyi */
     animation: fadeIn 3s ease-in-out forwards 4s; /* Animasi muncul */
     z-index: 20; /* Letakkan di atas semua elemen lainnya */
